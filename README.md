@@ -1,3 +1,43 @@
+# Título
+
+    "EUA Afora"
+
+# Descrição
+
+    Este projeto que se remete as Sprint 11 até a 16 do curso de Desenvolvimento Web da Triple Ten (antiga Practicum) e é uma sequência do projeto passado "EUA Afora" do repositório "web_project_4_ptbr". 
+    Neste projeto é portado todo o código do projeto passado para a biblioteca React, onde todas as funcionalidades do projeto anterior continuam ativas neste projeto mas com a implementação da nova formatação.
+
+#  Funcionalidades
+
+    - Comando de abrir os Popups de "Editar", "Adicionar", "Avatar" e o "Popup de Screen" (ampliação da imagem do card)
+    - Funcionalidade do botão de "Submit" do popup "Editar" para salvar as informações de "nome" e "sobre" (profissão) dos inputs
+    - Funcionalidade do botão de "Submit" do popup "Add" para criação de um novo card
+    - Funcionalidade do botão de "Submit" do popup "Avatar" para atualizar a foto de perfil (Avatar)
+    - Comando dos botões de adicionar um "Like" aos cards com a contagem de likes inclusas
+    - Comando dos botões de excluir para deletar um card
+
+# Demonstração
+
+    O site pode ser acessado através do link: https://JulioLima97.github.io/web_project_around_react/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
