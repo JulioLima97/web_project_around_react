@@ -1,8 +1,7 @@
 import buttonEdit from '../images/image-button-edit.png'
 import buttonAdd from '../images/image-button-add.png'
 
-import { useState, useEffect, useContext } from "react";
-import api from "../utils/api.js";
+import { useContext } from "react";
 import Card from "./Card";
 import { CurrentUserContext } from "../contexts/CurrentUserContext.js";
 
@@ -11,28 +10,14 @@ export default function Main({
   onEditProfileClick,
   onAddPlaceClick,
   onCardClick,
+  onCardLike,
+  onCardDelete,
+  onConfirmClick,
+  cardsApp
 }) {
 
-  const [cardsApp, setCards] = useState([]);
   const userData = useContext(CurrentUserContext);
 
-  useEffect(() => {
-    api.getInitialCards().then((apiCards) => setCards(apiCards));
-  }, []);
-
-  function handleCardLike(card) {
-    const isLiked = card.likes.some((i) => i._id === userData._id);
-
-    api.changeLikeCardStatus(card._id, isLiked).then((newCard) => {
-      setCards((state) => state.map((c) => (c._id === card._id ? newCard : c)));
-    });
-  }
-
-  function handleCardDelete(cardId) {
-    api.removeCard(cardId).then(() => {
-      setCards(cardsApp.filter((card) => card._id !== cardId));
-    });
-  }
   return (
     <>
       <section className="perfil">
@@ -76,8 +61,9 @@ export default function Main({
               productData={card}
               key={card._id}
               onCardClick={onCardClick}
-              onCardLike={handleCardLike}
-              onCardDelete={handleCardDelete}
+              onCardLike={onCardLike}
+              onCardDelete={onCardDelete}
+              onConfirmClick={onConfirmClick}
             />
           ))}
         </ul>

@@ -19,14 +19,14 @@ class Api {
       return fetch(`${this._baseUrl}/users/me`, {
         headers: this._headers,
       })
-      .then(res => {
+      .then((res) => {
           if (res.ok) {
             return res.json();
           }
           return Promise.reject(`Error: ${res.status}`);
       });
   }
-  editProfile(name, about) {
+  editUserInfo(name, about) {
       return fetch(`${this._baseUrl}/users/me`, {
           method: "PATCH",
           headers: this._headers,
@@ -42,7 +42,7 @@ class Api {
           return Promise.reject(`Error: ${res.status}`);
       });
   }
-  createNewCard(name, link) {
+  addCard({ name, link }) {
       return fetch(`${this._baseUrl}/cards`, {
           method: "POST",
           headers: this._headers,
@@ -59,7 +59,6 @@ class Api {
       });
   }
   deleteCard(cardId) {
-    console.log("cardId", cardId);
     return fetch(`${this._baseUrl}/cards/${cardId}`, {
       method: "DELETE",
       headers: this._headers,
@@ -71,6 +70,7 @@ class Api {
       return Promise.reject(`Error: ${res.status}`);
     });
   }
+
   
   addLikes(cardId) {
     return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
@@ -98,7 +98,7 @@ class Api {
     });
   }
 
-  changeLikeCardStatus(cardId, isLiked) {
+  changeLikeCardStatus(cardId, isLiked ) {
     if (isLiked) {
       return this.removeLikes(cardId);
     }
