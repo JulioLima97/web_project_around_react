@@ -3,7 +3,7 @@ import cardRemove from '../images/card__remove.png'
 import { useContext } from "react";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
-export default function Card({ productData, onCardClick, onCardDelete, onCardLike }) {
+export default function Card({ productData, onCardClick, onCardDelete, onCardLike, onConfirmClick }) {
   const { link, name, _id, owner, likes } = productData;
 
   const currentUser = useContext(CurrentUserContext);
@@ -14,6 +14,7 @@ export default function Card({ productData, onCardClick, onCardDelete, onCardLik
   }`;
 
   const isLiked = likes.some((like) => like._id === currentUser._id);
+  
   const cardLikeButtonClassName = `card__image ${
     isLiked ? "card__image-click" : ""
   }`;
@@ -30,9 +31,9 @@ export default function Card({ productData, onCardClick, onCardDelete, onCardLik
   return (
     <>
       <li className="card__places">
-        <button type="button" className="card__remove-button" onClick={() => onCardDelete(_id)}>
+        <button type="button" className={cardDeleteButtonClassName} onClick={() => onConfirmClick(_id)}>
           <img
-            className={cardDeleteButtonClassName}
+            className="card__remove"
             src={cardRemove}
             alt="imagem pequena de uma lixeira"
           />
