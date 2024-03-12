@@ -29,7 +29,7 @@ export const AddPlacePopup = ({ isOpen, onClose, onAddPlaceSubmit }) => {
             type="text"
             name="name"
             placeholder="Título"
-            required=""
+            required
             minLength={2}
             maxlenght={40}
             ref={name}
@@ -42,7 +42,7 @@ export const AddPlacePopup = ({ isOpen, onClose, onAddPlaceSubmit }) => {
             type="url"
             name="link"
             placeholder="Link de imagem"
-            required=""
+            required
             minLength={2}
             maxlenght={40}
             ref={link}

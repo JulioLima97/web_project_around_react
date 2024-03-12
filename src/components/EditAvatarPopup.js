@@ -29,7 +29,7 @@ export const EditAvatarPopup = ({ isOpen, onClose, onUpdateAvatar }) => {
             type="url"
             name="link"
             placeholder="Link de imagem"
-            required=""
+            required
             minLength={2}
             maxlenght={40}
             ref={avatarRef}

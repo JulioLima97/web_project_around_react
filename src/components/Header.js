@@ -1,7 +1,6 @@
 import logo from '../images/logo.png'
 export default function Header() {
   return (
-    <>
       <header className="header">
         <img
           className="header__photo"
@@ -9,6 +8,5 @@ export default function Header() {
           alt="logo de Around TheUS"
         />
       </header>
-    </>
   );
 }

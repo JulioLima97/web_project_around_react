@@ -38,7 +38,7 @@ export const EditProfilePopup = ({ isOpen, onClose, onUpdateUser }) => {
               type="text"
               name="name"
               placeholder="Nome"
-              required=""
+              required
               minLength={2}
               maxlenght={40}
               value={name}
@@ -53,7 +53,7 @@ export const EditProfilePopup = ({ isOpen, onClose, onUpdateUser }) => {
               type="text"
               name="about"
               placeholder="Sobre mim"
-              required=""
+              required
               minLength={2}
               maxlenght={40}
               value={description}
